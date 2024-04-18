@@ -1,0 +1,26 @@
+<!-- estamos invocando o bloco do outro HTML (base) agora vamos herdar o conteudo dele e agregar algo -->
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %} <!-- aqui estamos importando o bloco de macros  -->
+
+<!--  o atributo super permite chamar a class pai que seria base.html e herdar seu conteudo -->
+{%  block title %} 
+	{{ super() }}  Welcome To Flask Project
+{% endblock %}
+
+
+{% block content %}
+	{% if user_ip %} <!-- Agora vamos criar um estrutura de deciçoes dentro do template-->
+		<h2>Olá sua direção de ip é {{user_ip}} </h2>
+	{% else %}
+		<a href="{{ url_for('index')}}"> criar cookie </a>
+
+	{% endif %}
+
+	<!-- aqui vamos criar um for que vai icrementando cada valor de item dentro da lista -->
+	<ul>
+		{% for item in itens %}
+			{{ macros.render_itens(item) }}
+		{%  endfor %}
+	</ul>
+
+{% endblock %}

@@ -1,0 +1,5 @@
+/* para setar o css no html.base precisamos criar um campo link com o (rel="stylesheet") e no (href=) chamados a pasta static e os dois parametros x: href="static", filename="img/img.jpg". Sempre que for trabalhar com arquivos staticos é bom colocarem em pastas diferentes como (css, email) para ficar mais organzizados nas chamadas */
+
+img{
+  max-width: 100px;
+}
